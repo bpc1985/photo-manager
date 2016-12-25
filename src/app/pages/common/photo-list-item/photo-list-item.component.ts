@@ -13,6 +13,7 @@ declare var cordova: any;
 export class PhotoListItemComponent {
   @Input() photo: Photo;
   @Output() onDelete = new EventEmitter();
+  @Output() onToggle = new EventEmitter();
 
 
   constructor(private domSanitizer: DomSanitizer) {
@@ -22,15 +23,14 @@ export class PhotoListItemComponent {
     return this.domSanitizer.bypassSecurityTrustUrl(base64Image);
   }
 
-  deletePhoto(event: Event) {
-    event.stopPropagation();
+  deletePhoto($event?: Event) {
+    $event.stopPropagation();
     this.onDelete.emit();
   }
 
-  toggleStar($event?: any) {
+  toggleStar($event?: Event) {
     $event.stopPropagation();
-    $event.preventDefault();
-
     this.photo.starred = !this.photo.starred;
+    this.onToggle.emit();
   }
 }

@@ -10,7 +10,8 @@
   <ion-list>
     <photo-list-item *ngFor="let photo of filteredPhotos"
         [photo]="photo"
-        (onDelete)="deletePhoto(photo)">
+        (onDelete)="deletePhoto(photo)"
+        (onToggle)="editPhoto(photo)">
     </photo-list-item>
   </ion-list>
 </ion-content>

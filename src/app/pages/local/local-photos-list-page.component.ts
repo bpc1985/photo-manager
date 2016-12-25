@@ -65,6 +65,10 @@ export class LocalPhotosListPageComponent {
     this.backend.deletePhoto(photoId).then(() => this._loadPhotos());
   }
 
+  editPhoto(photo) {
+    this.backend.updatePhoto(photo);
+  }
+
   _copyPhotoToLocalDB(imageData) {
     const id = Math.random().toString(36).substr(2, 30);
     const base64Image = this.blobUtilService.convertToBase64String(imageData);

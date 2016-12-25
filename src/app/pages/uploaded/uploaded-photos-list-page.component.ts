@@ -49,6 +49,11 @@ export class UploadedPhotosListPageComponent {
     this.backend.deletePhoto(photo.id).then(() => this._loadPhotos());
   }
 
+  editPhoto(photo) {
+    this.backend = photo.url.includes('firebase') ? this.cloudBackend : this.localBackend;
+    this.backend.updatePhoto(photo);
+  }
+
   updateFilter($event?: any) {
     if ($event) {
       this.filter = $event.target.value;

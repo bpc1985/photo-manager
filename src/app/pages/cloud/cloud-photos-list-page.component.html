@@ -11,7 +11,8 @@
     <photo-list-item *ngFor="let photo of filteredPhotos"
         [photo]="photo"
         (click)="openPhotoDetailsPage(photo)"
-        (onDelete)="deletePhoto(photo.id)">
+        (onDelete)="deletePhoto(photo.id)"
+        (onToggle)="editPhoto(photo)">
     </photo-list-item>
   </ion-list>
 </ion-content>

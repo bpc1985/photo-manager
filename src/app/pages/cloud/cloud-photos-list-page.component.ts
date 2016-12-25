@@ -142,6 +142,10 @@ export class CloudPhotosListPageComponent {
     this.backend.deletePhoto(photoId).then(() => this._loadPhotos());
   }
 
+  editPhoto(photo) {
+    this.backend.updatePhoto(photo);
+  }
+
   updateFilter($event?: any) {
     if ($event) {
       this.filter = $event.target.value;

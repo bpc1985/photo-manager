@@ -32,7 +32,7 @@ export class CloudPhotoLibraryService {
   }
 
   public updatePhoto(photo) {
-    photo.created = moment(photo.created).toISOString();
+    //photo.created = moment(photo.created).toISOString();
     const photo$ = this.af.database.object(`/photos/${photo.id}`);
     return photo$.update({
       title: photo.title,
