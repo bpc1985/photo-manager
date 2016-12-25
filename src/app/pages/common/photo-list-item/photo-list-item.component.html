@@ -1,0 +1,24 @@
+<ion-item-sliding>
+  <ion-item>
+    <ion-thumbnail item-left>
+      <img [src]="displayImage(photo.url)" class="thumbnail-image"/>
+    </ion-thumbnail>
+    
+    <button ion-button clear icon-only item-right color="secondary"
+        (click)="toggleStar($event)">
+      <ion-icon *ngIf="photo.starred" name="star"></ion-icon>
+      <ion-icon *ngIf="!photo.starred" name="star-outline"></ion-icon>
+    </button>
+
+    <h2>{{ photo.title }}</h2>
+    <p>{{ photo.created | date:'dd MMMM yyyy, HH:mm' }}</p>
+    <p>{{ photo.description }}</p>
+  </ion-item>
+
+  <ion-item-options side="right">
+    <button ion-button color="danger" (click)="deletePhoto($event)">
+      <ion-icon name="trash"></ion-icon>
+      Delete
+    </button>
+  </ion-item-options>
+</ion-item-sliding>

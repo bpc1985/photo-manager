@@ -1,0 +1,59 @@
+{
+  "name": "photo-manager",
+  "author": "Hung Ho",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "2.2.1",
+    "@angular/compiler": "2.2.1",
+    "@angular/compiler-cli": "2.2.1",
+    "@angular/core": "2.2.1",
+    "@angular/forms": "2.2.1",
+    "@angular/http": "2.2.1",
+    "@angular/platform-browser": "2.2.1",
+    "@angular/platform-browser-dynamic": "2.2.1",
+    "@angular/platform-server": "2.2.1",
+    "@types/cordova-plugin-file": "0.0.3",
+    "@types/jasmine": "2.5.36",
+    "@types/whatwg-fetch": "0.0.33",
+    "angularfire2": "2.0.0-beta.6",
+    "firebase": "3.6.3",
+    "firebase-tools": "3.0.7",
+    "ionic-angular": "2.0.0-rc.4",
+    "ionic-native": "2.2.11",
+    "ionicons": "3.0.0",
+    "lodash": "4.17.2",
+    "moment": "2.17.1",
+    "rxjs": "5.0.0-beta.12",
+    "whatwg-fetch": "2.0.1",
+    "zone.js": "0.6.26"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "0.0.48",
+    "@types/node": "^6.0.52",
+    "typescript": "2.0.9"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-camera",
+    "cordova-plugin-compat",
+    "cordova-plugin-file"
+  ],
+  "cordovaPlatforms": [
+    "ios",
+    {
+      "platform": "ios",
+      "version": "",
+      "locator": "ios"
+    }
+  ]
+}

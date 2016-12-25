@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cloud Photos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [ngModel]="filter" (ionInput)="updateFilter($event)"></ion-searchbar>
+
+  <ion-list>
+    <photo-list-item *ngFor="let photo of filteredPhotos"
+        [photo]="photo"
+        (click)="openPhotoDetailsPage(photo)"
+        (onDelete)="deletePhoto(photo.id)">
+    </photo-list-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full color="secondary" (click)="addPhotoFromCamera()">
+    <ion-icon name="camera" padding-right></ion-icon>
+    Add Photo
+  </button>
+</ion-footer>

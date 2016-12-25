@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="photo != null">{{ photo.title }}</ion-title>
+    <ion-title *ngIf="photo == null">No Photo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="photo != null">
+    <ion-item>
+      <ion-icon *ngIf="photo.starred" name="star" item-right color="secondary"></ion-icon>
+      <ion-icon *ngIf="!photo.starred" name="star-outline" item-right color="secondary"></ion-icon>
+      <h2 class="card-header">{{ photo.title }}</h2>
+      <p>{{ photo.created | date:'dd MMMM yyyy, HH:mm' }}</p>
+    </ion-item>
+
+    <img *ngIf="photo.url" [src]="displayImage(photo.url)"/>
+
+    <ion-card-content>
+      <p class="description">{{ photo.description }}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button full clear color="danger" (click)="deletePhoto()">
+          <ion-icon name="trash"></ion-icon>
+          <span class="button-text">Delete</span>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button full clear (click)="toggleStar()">
+          <ion-icon *ngIf="!photo.starred" name="star"></ion-icon>
+          <ion-icon *ngIf="photo.starred" name="star-outline"></ion-icon>
+          <span class="button-text">{{ photo.starred ? 'Unstar' : 'Star' }}</span>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button full clear>
+          <ion-icon name="create"></ion-icon>
+          <span class="button-text">Edit</span>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <p *ngIf="photo == null" class="photo-details__error">
+    Could not find a photo with such id :(
+  </p>
+</ion-content>

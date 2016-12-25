@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Captured Photos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [ngModel]="filter" (ionInput)="updateFilter($event)"></ion-searchbar>
+
+  <ion-list>
+    <photo-list-item *ngFor="let photo of filteredPhotos"
+        [photo]="photo"
+        (onDelete)="deletePhoto(photo)">
+    </photo-list-item>
+  </ion-list>
+</ion-content>
+

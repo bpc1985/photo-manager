@@ -1,0 +1,70 @@
+photo-details-page {
+  .photo-details {
+    margin: 6px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 10px;
+  }
+
+  .photo-details__title {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .photo-details__subtitle {
+    font-size: 1rem;
+    color: #666666;
+  }
+
+  .photo-details__image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .photo-details__description {
+    white-space: pre-line;
+  }
+
+  .photo-details__star-icon {
+    color: map-get($colors, 'favorite');
+    float: right;
+    margin-right: 8px;
+    margin-top: 8px;
+    font-size: 1.4rem;
+  }
+
+  .photo-details__error {
+    text-align: center;
+  }
+
+  .photo-details__button-bar {
+    height: 100%;
+    width: 100%;
+    font-size: 0.67rem;
+    display: flex;
+  }
+
+  .photo-details__button-bar__button {
+    @extend %remove-button-styles;
+    @include button-background-color(map-get($colors, 'secondary'));
+    flex: 1;
+
+    border-top: 1px solid darken(map-get($colors, 'secondary'), 20%);
+
+    &:not(:first-child) {
+      border-left: 1px solid darken(map-get($colors, 'secondary'), 20%);
+    }
+
+    &[disabled] {
+      background-color: lighten(map-get($colors, 'secondary'), 20%);
+    }
+  }
+
+  .photo-details__button-bar__icon {
+    display: block;
+    font-size: 2.4em;
+    margin-bottom: 0.1em;
+    margin-top: 0.4em;
+  }
+}

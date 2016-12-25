@@ -1,0 +1,22 @@
+%remove-button-styles {
+  border: none;
+  background: transparent;
+
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+
+@mixin button-background-color($color) {
+  background-color: $color;
+  &:focus,
+  &:hover {
+    background-color: lighten($color, 10%);
+  }
+
+  &:active {
+    background-color: lighten($color, 15%);
+  }
+}
